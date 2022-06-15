@@ -30,13 +30,14 @@ RUN echo "Installing dependencies..." && \
 	ocl-icd-opencl-dev \
 	libviennacl-dev \
 	libcanberra-gtk-module \
+	libx11-dev \
+	libgl1 \ 
 	libopencv-dev && \
 	python3 -m pip install \
 	numpy \
 	protobuf \
-	opencv-python \
-  libx11-dev \
-  libgl1 
+	opencv-python 
+
 
 WORKDIR /workspace/openpose
 
@@ -49,7 +50,7 @@ RUN echo "Downloading and building OpenPose..." && \
 	#wget -P /openpose/models/pose/coco/ https://github.com/foss-for-synopsys-dwc-arc-processors/synopsys-caffe-models/raw/master/caffe_models/openpose/caffe_model/pose_iter_440000.caffemodel
 
 
-RUN cp /workspace/openpose/build/python/openpose/pyopenpose.cpython-37m-x86_64-linux-gnu.so /opt/conda/lib/python3.7/site-packages/pyopenpose.cpython-37m-x86_64-linux-gnu.so
-RUN ln -s /opt/conda/lib/python3.7/site-packages/pyopenpose.cpython-37m-x86_64-linux-gnu.so pyopenpose
+#RUN cp /workspace/openpose/build/python/openpose/pyopenpose.cpython-37m-x86_64-linux-gnu.so /opt/conda/lib/python3.7/site-packages/pyopenpose.cpython-37m-x86_64-linux-gnu.so
+#RUN ln -s /opt/conda/lib/python3.7/site-packages/pyopenpose.cpython-37m-x86_64-linux-gnu.so pyopenpose
 
 WORKDIR /workspace
