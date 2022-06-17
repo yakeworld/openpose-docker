@@ -2,8 +2,8 @@ FROM nvidia/cuda:11.4.0-cudnn8-devel-ubuntu18.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i -- 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list 
 RUN apt-get update
-RUN pip config set global.index-url https://pypi.mirrors.ustc.edu.cn/simple/
-RUN pip install pip -U
+#RUN pip config set global.index-url https://pypi.mirrors.ustc.edu.cn/simple/
+#RUN pip install pip -U
 #get deps
 RUN apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -12,7 +12,7 @@ libgoogle-glog-dev libboost-all-dev libcaffe-cuda-dev libhdf5-dev libatlas-base-
 
 #for python api
 RUN pip3 install --upgrade pip
-RUN pip3 install numpy opencv-python jupyter
+RUN pip3 install numpy opencv-python jupyter jupyter -i https://pypi.mirrors.ustc.edu.cn/simple/
 
 #replace cmake as old version has CUDA variable bugs
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.16.0/cmake-3.16.0-Linux-x86_64.tar.gz && \
