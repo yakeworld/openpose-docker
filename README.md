@@ -21,8 +21,10 @@ sudo xhost +si:localuser:root
 import cv2
 cv2.namedWindow('hello')
 
-
-
+cd openpose
+mkdir build
+cd build
+cmake -DBUILD_PYTHON=ON .. && make -j `nproc`
 
 
 
