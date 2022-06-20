@@ -21,3 +21,4 @@ rm cmake-3.16.0-Linux-x86_64.tar.gz
 ENV PATH="/opt/cmake-3.16.0-Linux-x86_64/bin:${PATH}"
 
 WORKDIR /workspace
+
