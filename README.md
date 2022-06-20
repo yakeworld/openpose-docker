@@ -21,6 +21,7 @@ sudo xhost +si:localuser:root
 ```
 import cv2
 cv2.namedWindow('hello')
+cv2.destroyAllWindows()
 ```
 编译poenpose
 ```
