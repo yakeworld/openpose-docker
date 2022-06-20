@@ -1,7 +1,7 @@
 FROM nvidia/cuda:11.4.0-cudnn8-devel-ubuntu18.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i -- 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list 
-RUN apt-get update
+#RUN apt-get update
 #RUN pip config set global.index-url https://pypi.mirrors.ustc.edu.cn/simple/
 #RUN pip install pip -U
 #get deps
